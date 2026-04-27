@@ -4,7 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MataKuliah extends Model
+class Matakuliah extends Model
 {
-    protected $table = 'table_mata_kuliah';
+    protected $table = 'table_matakuliah';
+
+     protected $fillable = [
+        'jurusan',
+        'kodemk',
+        'namamk'
+    ];
 }

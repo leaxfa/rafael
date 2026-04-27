@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mahasiswa;
+use App\Models\Dosen;
 use Illuminate\Http\Request;
 
-class MahasiswaController extends Controller
+class DosenController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('mahasiswa.index', [
-            'mahasiswa' => Mahasiswa::all()
+        return view('dosen.index', [
+            'dosen' => Dosen::all()
         ]);
     }
 
@@ -22,7 +22,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('mahasiswa.create', []);
+        return view('dosen.create');
     }
 
     /**
@@ -32,9 +32,9 @@ class MahasiswaController extends Controller
     {
         $data = $request->except('_token');
 
-        Mahasiswa::create($data);
+        Dosen::create($data);
 
-        return redirect()->action([MahasiswaController::class, 'index']);
+        return redirect()->action([DosenController::class, 'index']);
     }
 
     /**
@@ -42,7 +42,7 @@ class MahasiswaController extends Controller
      */
     public function show($id)
     {
-        return Mahasiswa::find($id);
+        return Dosen::find($id);
     }
 
     /**
@@ -50,8 +50,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        return view('mahasiswa.edit', [
-            'mahasiswa' => Mahasiswa::find($id)
+        return view('dosen.edit', [
+            'dosen' => Dosen::find($id)
         ]);
     }
 
@@ -60,18 +60,20 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->except('_token', 'id', '_method');
+      $data = $request->except('_token', 'id', '_method');
 
-        Mahasiswa::find($id)->update($data);
+        Dosen::find($id)->update($data);
 
-        return redirect()->action([MahasiswaController::class, 'index']);
+        return redirect()->action([DosenController::class, 'index']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Mahasiswa $mahasiswa)
+    public function destroy($id)
     {
-         Mahasiswa::where()->delete();
+        Dosen::find($id)->delete();//
+
+        return redirect()->action([DosenController::class, 'index']);
     }
-}
+    }
