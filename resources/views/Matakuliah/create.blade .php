@@ -7,43 +7,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
   <body>
-    <form action="{{route('dosen.save')}}"  method="post">
+    <form action="{{route('matakuliah.save')}}"  method="post">
         @csrf
         <table class="table table-dark table-striped-columns">
             <tr>
-                <td>Nama Lengkap</td>
-                <td>:</td>
-                <td><input type="text" name="Fullname"></td>
-            </tr>
-            <tr>
-                <td>Nomor Dosen</td>
-                <td>:</td>
-                <td><input type="text" name="ND"></td>
-            </tr>
-            <tr>
-                <td>Tempat Lahir</td>
-                <td>:</td>
-                <td><input type="text" name="Tempat_Lahir"></td>
-            </tr>
-            <tr>
-                <td>Tanggal Lahir</td>
-                <td>:</td>
-                <td><input type="text" name="Tanggal_Lahir"></td>
-            </tr>
- <tr>
-                <td>Pendidikan Terakhir</td>
-                <td>:</td>
-                <td><input type="text" name="Pendidikan_Terakhir"></td>
-            </tr>
-             <tr>
                 <td>Jurusan</td>
                 <td>:</td>
                 <td><input type="text" name="Jurusan"></td>
             </tr>
             <tr>
-                <td>Alamat</td>
+                <td>Kode Mata Kuliah</td>
                 <td>:</td>
-                <td><textarea name="Alamat"></textarea></td>
+                <td><input type="text" name="KodeMK"></td>
+            </tr>
+            <tr>
+                <td>Nama Mata Kuliah</td>
+                <td>:</td>
+                <td><input type="text" name="NamaMK"></td>
             </tr>
             <tr>
                 <td colspan="3">

@@ -4,14 +4,14 @@
     <input type="hidden" name="_method" value="PUT">
     <table>
         <tr>
-            <td>nama jurusan</td>
+            <td>Nama Jurusan</td>
             <td>:</td>
-            <td><input type="text" name="nama_jurusan" value="{{$jurusan->nama_jurusan}}"></td>
+            <td><input type="text" name="Nama_Jurusan" value="{{$jurusan->Nama_Jurusan}}"></td>
         </tr>
         <tr>
-            <td>kode jurusan</td>
+            <td>Kode Jurusan</td>
             <td>:</td>
-            <td><input type="text" name="kode_jurusan" value="{{$jurusan->kode_jurusan}}"></td>
+            <td><input type="text" name="Kode_Jurusan" value="{{$jurusan->Kode_Jurusan}}"></td>
         </tr>
         <tr>
             <td colspan="3">

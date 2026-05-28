@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('table_matakuliah', function (Blueprint $table) {
             $table->id();
-            $table->string('jurusan');
-            $table->string('kodemk')->unique();
-            $table->string('namamk');
+            $table->string('Jurusan');
+            $table->string('KodeMK')->unique();
+            $table->string('NamaMK');
             $table->timestamps();
         });
     }

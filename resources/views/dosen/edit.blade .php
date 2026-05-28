@@ -4,19 +4,39 @@
     <input type="hidden" name="_method" value="PUT">
     <table>
         <tr>
-            <td>nama lengkap</td>
+            <td>Nama Lengkap</td>
             <td>:</td>
-            <td><input type="text" name="fullname" value="{{$dosen->fullname}}"></td>
+            <td><input type="text" name="Fullname" value="{{$dosen->Fullname}}"></td>
         </tr>
         <tr>
-            <td>pendidikan terakhir</td>
+            <td>Nomor Induk Dosen</td>
             <td>:</td>
-            <td><input type="text" name="pendidikan_terakhir" value="{{$dosen->pendidikan_terakhir}}"></td>
+            <td><input type="text" name="ND" value="{{$dosen->ND}}"></td>
         </tr>
         <tr>
-            <td>alamat</td>
+            <td>Tempat Lahir</td>
             <td>:</td>
-            <td><textarea name="alamat">{{$dosen->alamat}}</textarea></td>
+            <td><input type="text" name="Tempat_Lahir" value="{{$dosen->Tempat_Lahir}}"></td>
+        </tr>
+        <tr>
+            <td>Tanggal Lahir</td>
+            <td>:</td>
+            <td><input type="text" name="Tanggal_Lahir" value="{{$dosen->Tanggal_Lahir}}"></td>
+        </tr>
+        <tr>
+            <td>Pendidikan Terakhir</td>
+            <td>:</td>
+            <td><input type="text" name="Pendidikan_Terakhir" value="{{$dosen->Pendidikan_Terakhir}}"></td>
+        </tr>
+        <tr>
+            <td>Jurusan</td>
+            <td>:</td>
+            <td><input type="text" name="Pendidikan_Terakhir" value="{{$dosen->Jurusan}}"></td>
+        </tr>
+        <tr>
+            <td>Alamat</td>
+            <td>:</td>
+            <td><textarea name="Alamat">{{$dosen->Alamat}}</textarea></td>
         </tr>
         <tr>
             <td colspan="3">

@@ -4,18 +4,26 @@
 <table border="1">
     <thead>
         <th>No</th>
-        <th>ama lengkap</th>
-        <th>pendidikan terakhir</th>
-        <th>alamat</th>
-        <th>tanggal dibuat</th>
+        <th>Nama Lengkap</th>
+        <th>Nomor Dosen</th>
+        <th>Tempat Lahir</th>
+        <th>Tanggal Lahir</th>
+        <th>Pendidikan Terakhir</th>
+        <th>Jurusan</th>
+        <th>Alamat</th>
+        <th>Tanggal Dibuat</th>
         <th>Aksi</th>
     </thead>
     @foreach ($dosen as $m)
     <tr>
         <td>{{$m->id}}</td>
-        <td>{{$m->fullname}}</td>
-        <td>{{$m->pendidikan_terakhir}}</td>
-        <td>{{$m->alamat}}</td>
+        <td>{{$m->Fullname}}</td>
+        <td>{{$m->ND}}</td>
+        <td>{{$m->Tempat_Lahir}}</td>
+        <td>{{$m->Tanggal_Lahir}}</td>
+        <td>{{$m->Pendidikan_Terakhir}}</td>
+        <td>{{$m->Jurusan}}</td>
+        <td>{{$m->Alamat}}</td>
         <td>{{$m->created_at}}</td>
         <td>
             <a href={{route('dosen.update',$m->id)}}>

@@ -3,10 +3,11 @@
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\MatakuliahController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/', function () {
+    return view('dashboard');
 });
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
@@ -36,3 +37,12 @@ Route::post('/jurusan', [JurusanController::class, 'store'])->name('jurusan.save
 Route::get('/jurusan-edit/{id}', [JurusanController::class, 'edit'])->name('jurusan.update');
 Route::put('/jurusan/{id}', [JurusanController::class, 'update'])->name('jurusan.edit');
 Route::delete('/jurusan/{id}', [JurusanController::class, 'destroy'])->name('jurusan.delete');
+
+
+Route::get('/matakuliah', [MatakuliahController::class, 'index']);
+Route::get('/matakuliah/{id}', [MatakuliahController::class, 'show']);
+Route::get('/matakuliah-create', [MatakuliahController::class, 'create'])->name('matakuliah.add');
+Route::post('/matakuliah', [MatakuliahController::class, 'store'])->name('matakuliah.save');
+Route::get('/matakuliah-edit/{id}', [MatakuliahController::class, 'edit'])->name('matakuliah.update');
+Route::put('/matakuliah/{id}', [MatakuliahController::class, 'update'])->name('matakuliah.edit');
+Route::delete('/matakuliah/{id}', [MatakuliahController::class, 'destroy'])->name('matakuliah.delete');

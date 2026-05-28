@@ -1,25 +1,26 @@
-<a href={{route('jurusan.add')}}>
+<a href={{route('matakuliah.add')}}>
                 <input type="button" value="Create">
             </a>
 <table border="1">
     <thead>
         <th>No</th>
-        <th>Nama Jurusan</th>
-        <th>Kode Jurusan</th>
-        <th>Tanggal Dibuat</th>
+        <th>Jurusan</th>
+        <th>Kode Mata Kuliah</th>
+        <th>Nama Mata Kuliah</th>
         <th>Aksi</th>
     </thead>
-    @foreach ($jurusan as $m)
+    @foreach ($matakuliah as $m)
     <tr>
         <td>{{$m->id}}</td>
-        <td>{{$m->Nama_Jurusan}}</td>
-        <td>{{$m->Kode_Jurusan}}</td>
+        <td>{{$m->Jurusan}}</td>
+        <td>{{$m->KodeMK}}</td>
+        <td>{{$m->NamaMK}}</td>
         <td>{{$m->created_at}}</td>
         <td>
-            <a href={{route('jurusan.update',$m->id)}}>
+            <a href={{route('matakuliah.update',$m->id)}}>
                 <input type="button" value="Edit">
             </a>
-            <form action="{{route('jurusan.delete', $m->id)}}"  method="post">
+            <form action="{{route('matakuliah.delete', $m->id)}}"  method="post">
     @csrf
     <input type="hidden" name="id" value="{{$m->id}}">
     <input type="hidden" name="_method" value="DELETE">
@@ -28,4 +29,4 @@
         </td>
     </tr>
     @endforeach
-</table>
+</table>s

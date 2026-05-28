@@ -11,14 +11,14 @@
         @csrf
         <table class="table table-dark table-striped-columns">
             <tr>
-                <td>nama jurusan</td>
+                <td>Nama Jurusan</td>
                 <td>:</td>
-                <td><input type="text" name="nama_jurusan"></td>
+                <td><input type="text" name="Nama_Jurusan"></td>
             </tr>
             <tr>
-                <td>kode jurusan</td>
+                <td>Kode Jurusan</td>
                 <td>:</td>
-                <td><input type="text" name="kode_jurusan"></td>
+                <td><input type="text" name="Kode_Jurusan"></td>
             </tr>
             <tr>
                 <td colspan="3">
