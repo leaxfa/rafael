@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Jurusan extends Model
+class Dosen extends Model
 {
     protected $table = 'table_jurusan';
 

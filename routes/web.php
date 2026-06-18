@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\KrsController;
+use App\Http\Controllers\KrsDetailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,9 +21,20 @@ Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasisw
 Route::get('/mahasiswa-edit/{id}', [MahasiswaController::class, 'edit'])->name('mahasiswa.update');
 Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.edit');
 Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.delete');
+Route::middleware('auth')->group(function(){
+    Route::resource('/mahasiswa', MahasiswaController::class);
+    Route::resource('/dosen', DosenController::class);
+    Route::resource('/matakuliah', MataKuliahController::class);
+    Route::resource('/jurusan', JurusanController::class);
+    Route::resource('/kelas', KelasController::class);
+    Route::resource('/krs', KRSController::class);
+});
 
+Route::get('/register', [AuthController::class, 'registerView']);
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 
-
+Route::get('/login', [AuthController::class, 'loginView']);
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 Route::get('/dosen', [DosenController::class, 'index']);
 Route::get('/dosen/{id}', [DosenController::class, 'show']);
@@ -46,3 +61,21 @@ Route::post('/matakuliah', [MatakuliahController::class, 'store'])->name('mataku
 Route::get('/matakuliah-edit/{id}', [MatakuliahController::class, 'edit'])->name('matakuliah.update');
 Route::put('/matakuliah/{id}', [MatakuliahController::class, 'update'])->name('matakuliah.edit');
 Route::delete('/matakuliah/{id}', [MatakuliahController::class, 'destroy'])->name('matakuliah.delete');
+
+
+Route::get('/kelas', [KelasController::class, 'index']);
+Route::get('/kelas/create', [KelasController::class, 'create']);
+Route::post('/kelas/store', [KelasController::class, 'store']);
+Route::delete('/kelas/{id}', [KelasController::class, 'destroy']);
+
+
+Route::get('/krs', [KrsController::class, 'index']);
+Route::get('/krs/create', [KrsController::class, 'create']);
+Route::post('/krs/store', [KrsController::class, 'store']);
+Route::delete('/krs/{id}', [KrsController::class, 'destroy']);
+
+
+Route::get('/krs-detail', [KrsDetailController::class, 'index']);
+Route::get('/krs-detail/create', [KrsDetailController::class, 'create']);
+Route::post('/krs-detail/store', [KrsDetailController::class, 'store']);
+Route::delete('/krs-detail/{id}', [KrsDetailController::class, 'destroy']);
